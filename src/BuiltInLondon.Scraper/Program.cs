@@ -17,8 +17,8 @@ namespace BuiltInLondon.Scraper
 
         static void Main()
         {
-            Scrape();
-            //Read();
+            //Scrape();
+            Read();
         }
 
         private static void Read()
@@ -30,7 +30,12 @@ namespace BuiltInLondon.Scraper
 
                 foreach (var company in csvReader.GetRecords<Company>())
                 {
-                    Console.WriteLine(company.Name);
+                    Console.WriteLine("Name: " + company.Name);
+                    Console.WriteLine("Employees: " + company.Employees);
+                    Console.WriteLine("URL: " + company.Url);
+                    Console.WriteLine("Address: " + company.Address);
+                    Console.WriteLine("");
+                    Thread.Sleep(500);
                 }
             }
         }
